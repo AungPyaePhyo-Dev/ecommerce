@@ -27,7 +27,7 @@
                 <td><img src="{{ asset('storage/uploads/'). '/' .$cat->image }}" width=50 height=50 /></td>
                 {{-- url('/uploads/' . $cat->image) --}}
                 <td>
-                  <button class="btn btn-info btn-sm"><i class="material-icons">visibility</i> </button>
+                  <a href="{{ route('cat.sub.index', $cat->id) }}" class="btn btn-info btn-sm"><i class="material-icons">visibility</i> </a>
                 </td>
                 <td>
                   <a href="{{ route('cats.edit', $cat->id )}}" class="btn btn-warning btn-sm"> 

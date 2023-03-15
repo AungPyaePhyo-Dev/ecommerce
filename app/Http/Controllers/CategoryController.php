@@ -42,21 +42,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $validated = $this->validate($request, [
             'name' => 'required|unique:categories',
             'image' => 'required'
         ]);
 
-
         $category = $this->service->createcategory($request);
 
-
-
-        if($category){
-            return redirect()->route('cats.index')->with('success', 'Category create successfully!');
-        }else{
-            return redirect()->back()->with('error', 'Category create error');
-        }
+        return redirect()->route('cats.index')->with('success', 'Category create successfully!');
 
 
 

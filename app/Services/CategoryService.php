@@ -38,17 +38,5 @@ class CategoryService
         $input = $this->getInput($request);
 
         $category = $this->categoryRepositoryInterface->insert($input);
-
-
-
-        // $file = $request->file('image');
-        // $imageName = $file->getClientOriginalName();
-        // $file->move(public_path() .'/uploads/', $imageName);
-
-        // $cat = new Category();
-        // $cat->name = $request->input('name');
-        // $cat->image = $imageName;
-
-        // $cat->save();
     }
 }

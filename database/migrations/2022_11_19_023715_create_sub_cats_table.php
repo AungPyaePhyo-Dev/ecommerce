@@ -15,6 +15,9 @@ class CreateSubCatsTable extends Migration
     {
         Schema::create('sub_cats', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained()->onDelete('CASCADE');
+            $table->string('name')->unique();
+            $table->string('image');
             $table->timestamps();
         });
     }
